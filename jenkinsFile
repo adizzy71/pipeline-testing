@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-    scmVars = checkout scm
+        scmVars = checkout scm
+        commitHash = scmVars.GIT_COMMIT
 }
     stages {
         stage("scm checkout") {
@@ -9,7 +10,7 @@ pipeline {
 
                 echo "step 1"
                 echo "step 2"
-                echo "The commit record is $env.GIT_COMMIT"
+                echo "The commit record is $commitHash"
                 bat 'set'
             }
 
