@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage("scm checkout") {
             steps {
-                step {
-                    echo "step 1"
-                }
+                echo "step 1"
+                echo "step 2"
             }
 
         }
