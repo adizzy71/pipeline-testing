@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo "step 1"
                 echo "step 2"
+                echo "$env.GIT_COMMIT"
             }
 
         }
