@@ -1,7 +1,8 @@
 pipeline {
     agent any
-    def scmVars = checkout scm
-    def commitHash = scmVars.GIT_COMMIT
+    environment {
+    scmVars = checkout scm
+}
     stages {
         stage("scm checkout") {
             steps {
